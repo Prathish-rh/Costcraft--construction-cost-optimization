@@ -1,0 +1,254 @@
+/* General Reset and Box Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Root Variables for Consistent Theme */
+:root {
+    --primary-color: forestgreen;
+    --secondary-color: darkorange;
+    --bg-color: aliceblue;
+    --highlight-color: crimson;
+    --text-color: ivory;
+    --overlay-color: rgba(0, 0, 0, 0.8);
+    --font-size-base: 62.5%; /* 1rem = 10px */
+}
+
+/* Base Font Size */
+html {
+    font-size: var(--font-size-base);
+}
+
+/* Home Section */
+.home-section {
+    height: 350vh;
+}
+
+/* Header Styles */
+header nav {
+    background-color: #E0F1DB;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 6rem;
+    padding: 0 2em;
+}
+
+.logo img {
+    width: 110px;
+    height: auto;
+}
+
+.navc ul {
+    display: flex;
+    gap: 4rem;
+    list-style: none;
+}
+
+.link {
+    text-decoration: none;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background: var(--primary-color);
+    transition: width 0.2s ease;
+}
+
+.link:hover::after {
+    width: 50%;
+}
+
+/* Main Content Styles */
+main {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bac-image {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: 2;
+}
+
+.overlay {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--overlay-color);
+    position: absolute;
+    z-index: 5;
+}
+
+.content {
+    position: absolute;
+    width: 60%;
+    height: auto;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.h-title {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.catchy-line {
+    font-size: 3rem;
+    color: greenyellow;
+}
+
+.abstract {
+    margin-top: 1em;
+    font-size: 2rem;
+    color: burlywood;
+}
+
+/* Materials Section */
+.materials {
+    width: 100%;
+    padding: 2em;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cont-m {
+    width: 60%;
+}
+
+.h-head {
+    font-size: 3.7rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    text-align: center;
+}
+
+.date-cont {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 80px;
+    align-items: center;
+}
+
+.dateItemBox {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-color);
+    border: 1px solid rgb(233, 220, 220);
+    height: 80px;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 65%;
+    padding: 0 1em;
+    position: relative;
+}
+
+.d_circle {
+    flex: 1;
+    border-radius: 50%;
+    height: 90%;
+    align-self: center;
+    background-color: #E8C1A2; /* Alternate colors handled by JavaScript or extra classes */
+}
+
+.d_info {
+    text-align: center;
+    flex: 6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.dc_info a {
+    text-decoration: none;
+}
+
+/* Section 3 Styles */
+.sec-3 {
+    width: 100vw;
+    padding: 2em;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+}
+
+.h2-head {
+    font-size: 3.7rem;
+    color: var(--highlight-color);
+    text-align: center;
+}
+
+.one-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mat-flex {
+    display: flex;
+    gap: 20px;
+    margin-top: 1em;
+}
+
+.mat-flex-item {
+    width: 200px;
+    height: 200px;
+}
+
+.mat-flex-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.mat-flex-item img:hover {
+    transform: scale(1.05);
+}
+
+.items {
+    font-size: 2.7rem;
+    margin: 20px 0;
+    color: navy;
+    text-align: center;
+}
+
+/* Footer Styles */
+footer {
+    width: 100%;
+    height: 20rem;
+}
+
+footer .box {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
