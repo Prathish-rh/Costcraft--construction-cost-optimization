@@ -18,10 +18,21 @@ body, html {
   background-color: #366031; /* Darker background on hover */
 }
 
+.navbar-logo {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  gap: 0.5rem; /* Add spacing between logo and app name */
+}
+
 .home-icon {
   height: 47px; /* Set appropriate size */
   width: auto;  /* Maintain aspect ratio */
   transition: transform 0.6s ease; /* Animation for icon */
+}
+
+.app-name {
+  font-size: 1.5rem; /* Adjust font size for app name */
+  color: rgb(0, 0, 0); /* Font color */
 }
 
 .navbar-logo:hover .home-icon {
@@ -31,7 +42,10 @@ body, html {
 .navbar-links {
   list-style: none;
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem; /* Add more spacing between links */
+  margin: 0; /* Reset margin */
+  padding: 0; /* Reset padding */
+  align-items: center; /* Align items vertically */
 }
 
 .navbar-links li {
@@ -133,6 +147,7 @@ body, html {
   50% { background-position: 400% 0; }
   100% { background-position: 0 0; }
 }
+
 
 
 

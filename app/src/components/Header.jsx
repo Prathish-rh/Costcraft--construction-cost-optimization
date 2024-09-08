@@ -6,14 +6,13 @@ function Header() {
     <nav className="navbar">
       <div className="navbar-logo">
         <img src="/logo.png" alt="Home" className="home-icon" /> {/* Placeholder for a home icon */}
+        <span className="app-name">CostCraft</span>
       </div>
       <ul className="navbar-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#calculator">Calculator</a></li>
-        <li><a href="#bidsphere">Bidsphere</a></li>
-        <li><a href="#schemes">Schemes</a></li>
-        <li><a href="#engineers">Engineers</a></li>
-        <li><button className="glow-on-hover">Sign Up</button></li>
+      <a href="#home"><li>Home</li></a>
+      <a href="#services"><li>Services</li></a>
+      <a href="#schemes"><li>Schemes</li></a>
+      <button className="glow-on-hover"><li>Sign Up</li></button>
       </ul>
     </nav>
   );
