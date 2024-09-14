@@ -1,4 +1,3 @@
-// src/components/ServicesSection.js
 import React from "react";
 import "./services.css";
 

@@ -1,11 +1,11 @@
 import React from "react";
-import "./Header.css"; // Import CSS specific to the Header component
+import "./Header.css"; 
 
 function Header() {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <img src="/logo.png" alt="Home" className="home-icon" /> {/* Placeholder for a home icon */}
+        <img src="/logo.png" alt="Home" className="home-icon" /> 
         <span className="app-name">CostCraft</span>
       </div>
       <ul className="navbar-links">
