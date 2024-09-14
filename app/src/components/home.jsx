@@ -18,7 +18,7 @@ function Home() {
           <p className="hero-subtitle">
             Predict construction costs with precision and build smarter projects.
           </p>
-          <Link className="hero-button" to="/" style={{textDecoration:"none"}}>Get Started</Link>
+          <Link className="hero-button" to="/">Get Started</Link>
         </div>
       </section>
 
