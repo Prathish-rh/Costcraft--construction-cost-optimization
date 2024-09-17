@@ -7,23 +7,30 @@ import { Link } from 'react-router-dom';
 
 function Home() {
   return (
-    
     <div className="home">
       <Header /> 
-      <section className="hero-section">
+
+      {/* Hero Section */}
+      <section id="home" className="hero-section"> {/* Added id="home" */}
         <div className="hero-content">
           <h1 className="hero-title">Welcome to CostCraft</h1>
           <p className="hero-subtitle">
             Predict construction costs with precision and build smarter projects.
           </p>
-          <Link className="hero-button" to="/">Get Started</Link>
+          <Link className="hero-button" to="/" style={{textDecoration:"none"}}>Get Started</Link>
         </div>
       </section>
 
-      <AboutSection />
-      <Services />  
+      <section id="services">
+        <Services />  
+      </section>
+      <section id="aboutsection">
+        <AboutSection />
+      </section>
+      
     </div>
   );
 }
 
 export default Home;
+
