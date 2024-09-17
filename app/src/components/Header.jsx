@@ -20,7 +20,7 @@ function Header() {
         <li onClick={() => scrollToSection("services")}>Services</li>
         <li onClick={() => scrollToSection("schemes")}>Schemes</li>
         <li onClick={() => scrollToSection("aboutsection")}>About Us</li>
-        <button className="glow-on-hover">Sign Up</button>
+        <button className="glow-on-hover" >Sign Up</button>
       </ul>
     </nav>
   );

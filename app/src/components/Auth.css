@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    font-family: 'Century Gothic', 'Arial', sans-serif;
+    color: #fff;
+    background: url('../images/home.png') no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  .auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+  }
+  
+  .auth-form-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    background: rgba(0, 0, 0, 0.8); /* Darker background for contrast */
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px); /* Adds a glassmorphism effect */
+  }
+  
+  .auth-form-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+    border-radius: 12px;
+    z-index: -1;
+  }
+  
+  .auth-form h2 {
+    margin: 0 0 1.5rem;
+    font-size: 2.5rem;
+    color: #00ffd5; /* Futuristic color */
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7); /* Enhanced shadow for depth */
+  }
+  
+  .input-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .input-group label {
+    margin-bottom: 0.5rem;
+    color: #bce4aa;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #00ffd5;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    color: #fff;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, background 0.3s ease;
+  }
+  
+  .input-group input:focus {
+    border-color: #002bff;
+    background: rgba(255, 255, 255, 0.3); /* Lighter background on focus */
+  }
+  
+  .auth-button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #00ffd5, #002bff);
+    color: #fff;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .auth-button:hover {
+    background: linear-gradient(45deg, #002bff, #00ffd5);
+    transform: scale(1.05);
+  }
+  
+  .toggle-button {
+    margin-top: 1.5rem;
+    background: none;
+    border: none;
+    color: #bce4aa;
+    cursor: pointer;
+    font-size: 1.1rem;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+  }
+  
+  .toggle-button:hover {
+    color: #00ffd5;
+  }
+  

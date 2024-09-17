@@ -1,18 +1,19 @@
-// App.js
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/home";
-import Services from "./components/services"; // Ensure the correct file path
+import Auth from "./components/Auth";
+import Services from "./components/services";
 
 function App() {
   return (
     <BrowserRouter>
-        <div className="app">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/services" element={<Services />} /> 
-          </Routes>
-        </div>
+      <div className="app">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/auth" element={<Auth />} />
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }
