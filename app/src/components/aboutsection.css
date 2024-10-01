@@ -50,6 +50,37 @@
   transition: box-shadow 0.5s ease, transform 0.5s ease;
 }
 
+.contact-info {
+  margin-top: 1.5rem;
+  font-size: 1.1rem; /* Slightly larger text */
+  color: #555; /* Dark gray for contact info */
+}
+
+.social-media {
+  margin-top: 2rem;
+}
+
+.social-media h3 {
+  font-size: 1.5rem;
+  color: #eaf1e0;
+  margin-bottom: 1rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* Space between icons */
+}
+
+.social-icons a {
+  color: #eaf1e0; /* Icon color */
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #00ffd5; /* Change color on hover */
+}
+
 
 @media (max-width: 768px) {
   .about-section {
