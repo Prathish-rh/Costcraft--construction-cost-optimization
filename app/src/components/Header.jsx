@@ -1,5 +1,6 @@
 import React from "react";
-import "./Header.css"; 
+import "./Header.css";
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
   const scrollToSection = (sectionId) => {
@@ -7,6 +8,12 @@ function Header() {
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const navigate = useNavigate();
+
+  const handleSignUpClick = () => {
+    navigate('/auth'); // Navigates to the Auth component (Sign Up page)
   };
 
   return (
@@ -20,7 +27,7 @@ function Header() {
         <li onClick={() => scrollToSection("services")}>Services</li>
         <li onClick={() => scrollToSection("schemes")}>Schemes</li>
         <li onClick={() => scrollToSection("aboutsection")}>About Us</li>
-        <button className="glow-on-hover" >Sign Up</button>
+        <button className="glow-on-hover" onClick={handleSignUpClick} >Sign Up</button>
       </ul>
     </nav>
   );
