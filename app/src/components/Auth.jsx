@@ -1,35 +1,62 @@
 import React, { useState } from "react";
 import "./Auth.css"; // Import the CSS file for styling
 import logo from '../images/logo.png'; // Make sure the logo path is correct
-import { FaEye, FaEyeSlash,FaArrowLeft } from "react-icons/fa"; // Import eye icons
+import { FaEye, FaEyeSlash, FaArrowLeft } from "react-icons/fa"; // Import eye icons
 import { useNavigate } from 'react-router-dom';
-
 
 function Auth() {
   const [isSignIn, setIsSignIn] = useState(true);
   const [passwordVisible, setPasswordVisible] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (isSignIn) {
-      console.log("Sign In logic here");
-    } else {
-      console.log("Sign Up logic here");
-    }
-  };
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
 
   const navigate = useNavigate();
 
-const handleBack = () => {
-  navigate(-1); // This will navigate back to the previous page
-};
+  const handleBack = () => {
+    navigate(-1); // This will navigate back to the previous page
+  };
 
+  // Placeholder sign-in function (to be replaced with real API logic)
+  const signIn = async (email, password) => {
+    // Add your real sign-in logic here, e.g., API call
+    console.log("Signing in with:", { email, password });
+    // Mock example:
+    if (email === "user@example.com" && password === "password123") {
+      alert("Sign In Successful");
+      navigate('/home'); // Navigate to a dashboard or home page after sign-in
+    } else {
+      alert("Sign In Failed: Invalid credentials");
+    }
+  };
+
+  // Placeholder sign-up function (to be replaced with real API logic)
+  const signUp = async (email, password, confirmPassword) => {
+    // Add your real sign-up logic here, e.g., API call
+    console.log("Signing up with:", { email, password, confirmPassword });
+    if (password !== confirmPassword) {
+      alert("Sign Up Failed: Passwords do not match");
+    } else {
+      alert("Sign Up Successful");
+      navigate('/dashboard'); // Navigate to a dashboard or home page after sign-up
+    }
+  };
+
+  // Handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (isSignIn) {
+      signIn(email, password); // Call the sign-in logic
+    } else {
+      signUp(email, password, confirmPassword); // Call the sign-up logic
+    }
+  };
 
   return (
     <div className="auth-container">
       <div className="back-icon" onClick={handleBack}>
-  <FaArrowLeft />
-</div>
+        <FaArrowLeft />
+      </div>
 
       <div className="auth-form-wrapper">
         <img src={logo} alt="CostCraft Logo" className="auth-logo" />
@@ -37,8 +64,13 @@ const handleBack = () => {
         <form className="auth-form" onSubmit={handleSubmit}>
           <div className="input-group">
             <label>Email</label>
-            <div className="email-wrapper">  
-            <input type="email" required />
+            <div className="email-wrapper">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
             </div>
           </div>
           <div className="input-group password-group">
@@ -46,6 +78,8 @@ const handleBack = () => {
             <div className="password-wrapper">
               <input
                 type={passwordVisible ? "text" : "password"}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 required
               />
               <span
@@ -59,8 +93,13 @@ const handleBack = () => {
           {!isSignIn && (
             <div className="input-group">
               <label>Confirm Password</label>
-              <div className="confirm-wrapper">  
-              <input type="password" required />
+              <div className="confirm-wrapper">
+                <input
+                  type="password"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  required
+                />
               </div>
             </div>
           )}
