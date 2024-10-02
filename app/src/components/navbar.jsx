@@ -1,8 +1,8 @@
 import React from "react";
 import "./navbar.css";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle'; // import the MUI icon
 
-function Header() {
-
+function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
@@ -10,18 +10,18 @@ function Header() {
         <span className="app-name">CostCraft</span>
       </div>
       <ul className="navbar-links">
-        <li >Home</li>
-        <li >Services</li>
-        <li >Schemes</li>
-        <li >About Us</li>
+        <li>Home</li>
+        <li>Calculator</li>
         <li>Bidsphere</li>
         <li>Engineers</li>
         <li>
-          <img src="/profile-icon.png" alt="Profile" className="profile-icon" />
+          <AccountCircleIcon className="profile-icon" />My Profile
         </li>
       </ul>
     </nav>
   );
 }
 
-export default Header;
+
+
+export default Navbar;

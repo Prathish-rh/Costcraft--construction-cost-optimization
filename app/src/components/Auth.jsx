@@ -24,7 +24,7 @@ function Auth() {
     // Mock example:
     if (email === "user@example.com" && password === "password123") {
       alert("Sign In Successful");
-      navigate('/home'); // Navigate to a dashboard or home page after sign-in
+      navigate('/dashboard'); // Navigate to a dashboard or home page after sign-in
     } else {
       alert("Sign In Failed: Invalid credentials");
     }

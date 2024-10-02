@@ -1,0 +1,32 @@
+.dashboard-container {
+    padding: 2rem;
+    background-color: #f4f4f4;
+  }
+  
+  .notice-board {
+    background-color: #003366;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+  }
+  
+  .board-title {
+    margin-bottom: 1rem;
+  }
+  
+  .materials-link {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .materials-slider {
+    padding: 1rem;
+    background-color: white;
+    border-radius: 12px;
+  }
+  
+  .slider-title {
+    margin-bottom: 1rem;
+  }
+  
