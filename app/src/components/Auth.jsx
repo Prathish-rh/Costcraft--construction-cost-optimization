@@ -4,6 +4,7 @@ import logo from '../images/logo.png'; // Make sure the logo path is correct
 import { FaEye, FaEyeSlash, FaArrowLeft } from "react-icons/fa"; // Import eye icons
 import { useNavigate } from 'react-router-dom';
 
+
 function Auth() {
   const [isSignIn, setIsSignIn] = useState(true);
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -23,7 +24,6 @@ function Auth() {
     console.log("Signing in with:", { email, password });
     // Mock example:
     if (email === "user@example.com" && password === "password123") {
-      alert("Sign In Successful");
       navigate('/dashboard'); // Navigate to a dashboard or home page after sign-in
     } else {
       alert("Sign In Failed: Invalid credentials");
@@ -37,8 +37,8 @@ function Auth() {
     if (password !== confirmPassword) {
       alert("Sign Up Failed: Passwords do not match");
     } else {
-      alert("Sign Up Successful");
-      navigate('/dashboard'); // Navigate to a dashboard or home page after sign-up
+      alert("Account created")
+      navigate('/auth'); // Navigate to a dashboard or home page after sign-up
     }
   };
 

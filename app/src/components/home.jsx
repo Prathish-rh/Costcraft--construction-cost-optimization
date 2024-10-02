@@ -9,8 +9,6 @@ function Home() {
   return (
     <div className="home">
       <Header /> 
-
-      {/* Hero Section */}
       <section id="home" className="hero-section"> {/* Added id="home" */}
         <div className="hero-content">
           <h1 className="hero-title">Welcome to CostCraft</h1>

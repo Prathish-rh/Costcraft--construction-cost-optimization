@@ -2,8 +2,6 @@ body {
   margin: 0;
   font-family: 'Century Gothic', 'Arial', sans-serif;
   color: #fff;
-  background: url('../images/2.jpg') no-repeat center center fixed;
-  background-size: cover;
 }
 
 .auth-container {
@@ -11,20 +9,24 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.7);
+  background-image: url('../images/2.jpg'); /* Path to your image */
+  background-size: cover; /* Cover the entire container */
+  background-position: center; /* Center the image */
+  position: relative; /* Position relative to contain absolutely positioned children */
 }
 
 .auth-form-wrapper {
   position: relative;
   width: 100%;
   max-width: 450px;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.8); /* Semi-transparent background for readability */
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(10px);
-  text-align: center; /* Center all content */
+  text-align: center;
 }
+
 
 .auth-logo {
   width: 100px;
