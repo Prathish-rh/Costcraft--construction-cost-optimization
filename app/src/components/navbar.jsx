@@ -14,7 +14,7 @@ function Navbar() {
       </div>
       <ul className="navbar-links">
         {/* Adding active class dynamically based on the current route */}
-        <li className={location.pathname === '/' ? 'active' : ''}>
+        <li className={location.pathname === '/dashboard' ? 'active' : ''}>
           <Link to="/">Home</Link>
         </li>
         <li className={location.pathname === '/calculator' ? 'active' : ''}>

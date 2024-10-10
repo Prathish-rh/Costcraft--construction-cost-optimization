@@ -1,10 +1,69 @@
 import React, { useState, useEffect } from "react";
-import { Box, Typography, Button, Card, CardContent } from "@mui/material";
-import { Swiper, SwiperSlide } from "swiper/react";
-import 'swiper/css';
+import { Box, Typography, Button,Card,CardContent} from "@mui/material";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "./dashboard.css";
 import Navbar from "./navbar";
+import ma1 from "../images/ma1.jpg";
+import ma2 from "../images/ma2.jpg";
+import ma3 from "../images/ma3.jpg";
+import ma4 from "../images/ma4.jpg";
+import ma5 from "../images/ma5.jpg";
 
+const PrevArrow = ({ onClick }) => (
+  <div className="slick-prev" onClick={onClick} style={{ ...arrowStyle, left: "10px" }}>
+    &#10094;
+  </div>
+);
+
+// Custom Next Arrow Component
+const NextArrow = ({ onClick }) => (
+  <div className="slick-next" onClick={onClick} style={{ ...arrowStyle, right: "10px" }}>
+    &#10095;
+  </div>
+);
+
+const arrowStyle = {
+  display: "block",
+  background: "#333",
+  color: "#fff",
+  borderRadius: "50%",
+  padding: "10px",
+  cursor: "pointer",
+  zIndex: 1
+};
+
+const sliderSettings = {
+  dots: true,           // Enable navigation dots
+  infinite: true,       // Enable infinite scrolling
+  speed: 3000,           // Speed of the transition (ms)
+  slidesToShow: 3,      // Number of slides to show at once
+  slidesToScroll: 3,    // Number of slides to scroll with each action
+  autoplay: true,            // Enable auto-slide
+  autoplaySpeed: 2000,
+  cssEase: "linear",
+  prevArrow: <PrevArrow />,  // Use custom Prev Arrow
+  nextArrow: <NextArrow />,  // Use custom Next Arrow 
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+};
 const Dashboard = () => {
   const [notice, setNotice] = useState("");
 
@@ -19,6 +78,12 @@ const Dashboard = () => {
     fetchNotice();
   }, []);
 
+  const materials = [{ name: "Material 1", image: ma1 },
+    { name: "Material 2", image: ma2 },
+    { name: "Material 3", image: ma3 },
+    { name: "Material 4", image: ma4},
+    { name: "Material 5", image: ma5 },
+    { name: "Material 6", image: ma1 },];
   return (
     <div className="dashboard-container">
       <Navbar />
@@ -46,30 +111,27 @@ const Dashboard = () => {
           Go to Build Materials
         </Button>
       </Box>
-
-      {/* Materials Slider */}
       <Box className="materials-slider">
-        <Typography variant="h5" className="slider-title">
-          Best Materials on the Market
-        </Typography>
-        <Swiper spaceBetween={30} slidesPerView={3}>
-          <SwiperSlide>
-            <Card>
-              <CardContent>Material 1</CardContent>
-            </Card>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card>
-              <CardContent>Material 2</CardContent>
-            </Card>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Card>
-              <CardContent>Material 3</CardContent>
-            </Card>
-          </SwiperSlide>
-        </Swiper>
-      </Box>
+    <Typography variant="h5" className="slider-title">
+      Best Materials on the Market
+    </Typography>
+    <Slider {...sliderSettings}>
+        {materials.map((material, index) => (
+          <Card key={index}>
+            <CardContent>
+              <img
+                src={material.image}
+                alt={material.name}
+                style={{ width: "100%", height: "500px" }}
+              />
+              <Typography variant="body2" style={{ textAlign: "center", marginTop: "10px" }}>
+                {material.name}
+              </Typography>
+            </CardContent>
+          </Card>
+        ))}
+      </Slider>
+  </Box>
     </div>
   );
 };
