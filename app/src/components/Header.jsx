@@ -1,6 +1,6 @@
 import React from "react";
 import "./Header.css";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 
 function Header() {
   const scrollToSection = (sectionId) => {
@@ -23,9 +23,13 @@ function Header() {
         <span className="app-name">CostCraft</span>
       </div>
       <ul className="navbar-links">
-        <li onClick={() => scrollToSection("home")}>Home</li>
+        <li >Home</li>
         <li onClick={() => scrollToSection("services")}>Services</li>
-        <li onClick={() => scrollToSection("schemes")}>Schemes</li>
+        <li>
+          <Link to="/scheme" style={{ textDecoration: "none", color: "inherit" }}>
+            Schemes
+          </Link>
+        </li>
         <li onClick={() => scrollToSection("aboutsection")}>About Us</li>
         <button className="glow-on-hover" onClick={handleSignUpClick} >Sign Up</button>
       </ul>

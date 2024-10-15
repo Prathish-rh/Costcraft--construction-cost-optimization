@@ -32,15 +32,18 @@ function Auth() {
 
   // Placeholder sign-up function (to be replaced with real API logic)
   const signUp = async (email, password, confirmPassword) => {
-    // Add your real sign-up logic here, e.g., API call
     console.log("Signing up with:", { email, password, confirmPassword });
     if (password !== confirmPassword) {
       alert("Sign Up Failed: Passwords do not match");
     } else {
-      alert("Account created")
-      navigate('/auth'); // Navigate to a dashboard or home page after sign-up
+      alert("Account Created Successfully")
+      setEmail('');
+      setPassword('');
+      setConfirmPassword('');
+      setIsSignIn(true);
     }
   };
+  
 
   // Handle form submission
   const handleSubmit = (e) => {
