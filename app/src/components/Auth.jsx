@@ -3,7 +3,7 @@ import "./Auth.css"; // Import the CSS file for styling
 import logo from '../images/logo.png'; // Make sure the logo path is correct
 import { FaEye, FaEyeSlash, FaArrowLeft } from "react-icons/fa"; // Import eye icons
 import { useNavigate } from 'react-router-dom';
-
+import { Link } from "react-router-dom";
 
 function Auth() {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -106,9 +106,9 @@ function Auth() {
               </div>
             </div>
           )}
-          <button type="submit" className="auth-button">
+          <Link to="/dashboard"><button type="submit" className="auth-button">
             {isSignIn ? "Sign In" : "Sign Up"}
-          </button>
+          </button></Link>
           <button
             type="button"
             className="toggle-button"
